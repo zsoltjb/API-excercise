@@ -99,11 +99,21 @@
 
 				if (result.status.name == "ok") {
 
+					if (result['data']['ocean']){
+						
 					$('#results').html(`
-					<h2>Sea or Ocean near within given radius</h2> <br><br>
-					The ${result['data']['ocean']['name']} is<br>
-					${result['data']['ocean']['distance']} miles away from the above location.
+						<h2>Ocean near within given radius</h2> <br><br>
+						The ${result['data']['ocean']['name']} is<br>
+						${result['data']['ocean']['distance']} miles away from the above location.
 					`);
+						
+					} else {
+						
+					$('#results').html("We are afraid we could not find an ocean in the area.");
+					
+					}
+					
+
 				}
 			
 			},
