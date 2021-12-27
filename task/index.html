@@ -1,0 +1,47 @@
+<! DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Geonames API Task</title>
+		<meta name="author" content="Zsolt J. Bea">
+		<link rel="stylesheet" href="./libs/css/style.css">
+	</head>
+	
+	<body>
+		<div id=”preloader”></div>
+		<table>
+			<caption><h1>Geonames APIs</h1></caption>
+			<tr class="top-row">
+				<td class="left-col">API name</td>
+				<td class="middle-col">API description</td>
+				<td class="right-col"></td>
+			</tr>
+			<tr>
+				<td class="left-col">1.</td>
+				<td class="middle-col"><p>Returns the wikipedia entries found for the searched place</p><p class="align-right">Palce's name: <input type="text" name="placeName" id="wikiSearch"></p></td>
+				<td class="right-col"><button id="submit1" >Submit</button></td>
+			</tr>
+			<tr>
+				<td class="left-col">2.</td>
+				<td class="middle-col"><p>Nearest weather station with the most recent weather observation</p><p class="align-right">Latitude: <input class="short-width" type="text" name="latitude" id="lat"><br>Longitude:<input class="short-width" type="text" name="longitude" id="lng"></p></td>
+				<td class="right-col"><button id="submit2" >Submit</button></td>
+			</tr>
+			<tr>
+				<td class="left-col">3.</td>
+				<td class="middle-col"><p>Returns the ocean or sea for the given latitude/longitude</p><p class="align-right">Latitude: <input class="short-width" type="text" name="latitude" id="lat-2"><br>Longitude:<input class="short-width" type="text" name="longitude" id="lng-2"></p>Radius: <input type="range" name="radius" id="radius" min="0" max="200"><span id="radiusLabel">100</span></td>
+				<td class="right-col"><button id="submit3" >Submit</button></td>
+			</tr>
+			<tr>
+				<td id="results" colspan="3">
+				Results
+				</td>
+			</tr>
+		</table>
+		
+		<script type="application/javascript" src="libs/js/jquery-3.6.0.min.js"></script>
+		<script type="application/javascript" src="libs/js/script.js"></script>
+		
+	</body>
+
+</html>
