@@ -33,6 +33,9 @@
 						<a href="https://${result['data'][i]['wikipediaUrl']}" target="_blank" >Click here to read more</a><hr>
 						`)
 					};
+					if(result['data'].length === 0){
+						$('#results').html("Sorry, no results.");
+					}
 				}
 			
 			},
@@ -59,15 +62,23 @@
 
 				if (result.status.name == "ok") {
 
+					if (result['data']['stationName']){
+					
 					$('#results').html(`
-					<h2>Most recent weather observation</h2> <br><br>
-					Observation station's name: ${result['data']['weatherObservation']['stationName']} <br>
-					Temperature: ${result['data']['weatherObservation']['temperature']}\u2103 <br>
-					Clouds: ${result['data']['weatherObservation']['clouds']} <br>
-					Humidity: ${result['data']['weatherObservation']['humidity']}% <br>
-					Wind speed: ${result['data']['weatherObservation']['windSpeed']} mph <br>
-					Time of observation: ${result['data']['weatherObservation']['datetime']}
-					`);
+						<h2>Most recent weather observation</h2> <br><br>
+						Observation station's name: ${result['data']['weatherObservation']['stationName']} <br>
+						Temperature: ${result['data']['weatherObservation']['temperature']}\u2103 <br>
+						Clouds: ${result['data']['weatherObservation']['clouds']} <br>
+						Humidity: ${result['data']['weatherObservation']['humidity']}% <br>
+						Wind speed: ${result['data']['weatherObservation']['windSpeed']} mph <br>
+						Time of observation: ${result['data']['weatherObservation']['datetime']}
+						`);
+						
+					} else {
+					
+						$('#results').html("Something went wrong. Check your coordinates!");
+						
+					}
 				}
 			
 			},
