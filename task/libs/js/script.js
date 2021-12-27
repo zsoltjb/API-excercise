@@ -1,6 +1,6 @@
 	$(window).on('load', function () {
 		if ($('#preloader').length) {
-				$('#preloader').delay(1000).fadeOut('slow', function () {
+				$('#preloader').delay(50).fadeOut('slow', function () {
 				$(this).remove();
 			});
 		}
@@ -62,7 +62,7 @@
 
 				if (result.status.name == "ok") {
 
-					if (result['data']['stationName']){
+					if (result['data']['weatherObservation']){
 					
 					$('#results').html(`
 						<h2>Most recent weather observation</h2> <br><br>
